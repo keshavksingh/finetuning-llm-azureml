@@ -1,0 +1,23 @@
+name: llmdollyenv
+channels:
+  - defaults
+  - conda-forge
+  - pytorch
+  - nvidia
+dependencies:
+  - python=3.8.2
+  - pip=20.2.4
+  - pytorch=2.0.1
+  - torchvision=0.15.2
+  - torchaudio=2.0.2
+  - pytorch-cuda=11.7
+  - pip:
+    - bitsandbytes==0.39.1
+    - git+https://github.com/huggingface/transformers.git
+    - git+https://github.com/huggingface/peft.git
+    - git+https://github.com/huggingface/accelerate.git
+    - datasets
+    - scipy
+    - pyarrow
+    - loralib
+    - sentencepiece
