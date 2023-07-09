@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: llminference
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: llminference
+  template:
+    metadata:
+      labels:
+        app: llminference
+    spec:
+      containers:
+      - name: llminference
+        image: <>.azurecr.io/llmmodelinference:v1
+        ports:
+        - containerPort: 8000
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: llminference
+spec:
+  type: LoadBalancer
+  ports:
+  - port: 8000
+    targetPort: 8000
+  selector:
+    app: llminference
