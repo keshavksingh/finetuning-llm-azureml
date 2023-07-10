@@ -1,0 +1,27 @@
+name: llm-inference
+channels:
+  - defaults
+  - conda-forge
+dependencies:
+  - python=3.8.2
+  - pip
+  - git
+  - numpy
+  - pillow
+  - yaml
+  - pyyaml
+  - protobuf
+  - tqdm
+  - pip:
+    - torch
+    - torchvision
+    - torchaudio
+    - bitsandbytes==0.39.1
+    - git+https://github.com/huggingface/transformers.git
+    - git+https://github.com/huggingface/peft.git
+    - git+https://github.com/huggingface/accelerate.git
+    - datasets
+    - scipy
+    - fastapi[all]
+    - python-dotenv
+    - scikit-learn

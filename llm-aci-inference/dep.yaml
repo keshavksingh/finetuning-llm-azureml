@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: llminference
-        image: <>.azurecr.io/llmmodelinference:v1
+        image: cgaamlregistrysandncus02.azurecr.io/llmmodelinference:v1
         ports:
         - containerPort: 8000
 ---
