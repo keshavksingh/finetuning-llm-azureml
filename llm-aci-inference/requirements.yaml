@@ -4,7 +4,7 @@ channels:
   - conda-forge
 dependencies:
   - python=3.8.2
-  - pip
+  - pip=20.2.4
   - git
   - numpy
   - pillow
@@ -13,9 +13,6 @@ dependencies:
   - protobuf
   - tqdm
   - pip:
-    - torch
-    - torchvision
-    - torchaudio
     - bitsandbytes==0.39.1
     - git+https://github.com/huggingface/transformers.git
     - git+https://github.com/huggingface/peft.git
@@ -24,4 +21,5 @@ dependencies:
     - scipy
     - fastapi[all]
     - python-dotenv
+    - uvicorn
     - scikit-learn
