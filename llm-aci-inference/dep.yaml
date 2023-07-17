@@ -14,9 +14,28 @@ spec:
     spec:
       containers:
       - name: llminference
-        image: cgaamlregistrysandncus02.azurecr.io/llmmodelinference:v1
+        image: keshav83singh/llminference:latest
+        imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 8000
+        resources:
+          limits:
+           nvidia.com/gpu: 1
+# Either
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: llminference
+spec:
+  type: ClusterIP
+  selector:
+    component: llminference
+  ports:
+  - port: 8000
+    protocol: TCP
+    targetPort: 8000
+# OR
 ---
 apiVersion: v1
 kind: Service
